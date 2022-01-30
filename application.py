@@ -38,7 +38,11 @@ db = SQL("sqlite:///finance.db")
 
 # Make sure API key is set
 if not os.environ.get("API_KEY"):
-    raise RuntimeError("API_KEY not set")
+	try:
+		os.environ["API_KEY"] = "pk_f76c6f4d0c1d435e83a9ce4f21d2567d"
+	except:
+		raise RuntimeError("API_KEY not set")
+
 
 # ---------------------------------------------
 @app.route("/", methods=["GET", "POST"])
