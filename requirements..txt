@@ -1,0 +1,6 @@
+Flask
+requests
+passlib
+SQLAlchemy
+cs50
+Flask-Session
