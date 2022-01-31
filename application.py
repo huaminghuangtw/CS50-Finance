@@ -35,9 +35,14 @@ Session(app)
 
 # Configure CS50 Library to use SQLite database
 uri = os.environ.get("DATABASE_URL")
-if uri.startswith("postgres://"):
-    uri = uri.replace("postgres://", "postgresql://")
-db = SQL(uri)
+if (uri):
+    # PostgreSQL database
+    if uri.startswith("postgres://"):
+        uri = uri.replace("postgres://", "postgresql://")
+    db = SQL(uri)
+else:
+    # Local SQLite database
+    db = SQL("sqlite:///finance.db")
 
 # Make sure API key is set
 if not os.environ.get("API_KEY"):
