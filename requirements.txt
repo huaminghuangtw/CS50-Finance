@@ -1,6 +1,6 @@
-Flask
-requests
-passlib
-SQLAlchemy
 cs50
+Flask
 Flask-Session
+requests
+gunicorn
+psycopg2
